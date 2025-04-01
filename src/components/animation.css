@@ -1,0 +1,37 @@
+/* animation.css */
+
+/* Animacija pri ulasku */
+.menu-primary-enter {
+  opacity: 0;
+  transform: scaleY(
+    0
+  ); /* Početna pozicija (komponenta je potpuno sklopljena) */
+  transform-origin: top; /* Postavljamo početnu tačku za transformaciju na gornji deo */
+}
+
+.menu-primary-enter-active {
+  opacity: 1;
+  transform: scaleY(1); /* Komponenta se širi prema dolje */
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease; /* Animacija za opacity i scaleY */
+  will-change: transform, opacity;
+}
+
+/* Animacija pri izlasku */
+.menu-primary-exit {
+  opacity: 1;
+  transform: scaleY(
+    1
+  ); /* Početna pozicija pri izlasku (komponenta je potpuno otvorena) */
+  transform-origin: top; /* Postavljamo početnu tačku za transformaciju na gornji deo */
+}
+
+.menu-primary-exit-active {
+  opacity: 0;
+  transform: scaleY(0); /* Komponenta se smanjuje prema gore */
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease; /* Animacija za opacity i scaleY */
+  will-change: transform, opacity;
+}
