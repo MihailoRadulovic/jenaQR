@@ -10,8 +10,8 @@ function TopOfItem({ photo, typeOfDrink }) {
           className="h-full aspect-square rounded-l-3xl object-cover"
           // className="h-16 w-16 rounded-l-3xl object-cover"
         />
-        <div className="ml-auto pr-2 h-full flex items-center justify-end w-full text-2xl text-gray-300">
-          <p className=" mr-2">{typeOfDrink}</p>
+        <div className="ml-auto pr-2 h-full flex items-center justify-end w-full text-2xl text-gray-200">
+          <p className=" mr-2 font-normal">{typeOfDrink}</p>
           <FaChevronDown className="text-xl" />
         </div>
       </div>

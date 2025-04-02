@@ -5,7 +5,6 @@ import jenaLogo from "./jenaLogo.jpg";
 
 function App() {
   useEffect(() => {
-    document.title = "Jena";
     const link = document.querySelector("link[rel~='icon']");
     if (link) {
       link.href = jenaLogo; // Promeni putanju ako koristiš drugi fajl

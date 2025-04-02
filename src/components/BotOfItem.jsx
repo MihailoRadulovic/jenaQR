@@ -14,7 +14,7 @@ function BotOfItem({ typeOfDrink, loadedData }) {
   const drinkType = drinks.find((drink) => drink.category === typeOfDrink);
 
   return (
-    <div className="bg-gray-600 w-[83%] mx-auto h-auto rounded-b-3xl p-3 ">
+    <div className="bg-gray-600 w-[83%] mx-auto h-auto rounded-b-3xl p-3 font-['Montserrat']">
       <CSSTransition
         in={activeMenu === "main"}
         unmountOnExit
