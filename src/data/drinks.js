@@ -1,15 +1,15 @@
-import coffePhoto from "../images/coffePhoto.jpg";
-import alcohol from "../images/alcohol.jpg";
-import stillDrink from "../images/stillDrink.jpg";
-import cocktail from "../images/cocktail.jpg";
-import energyDrink from "../images/energyDrink.jpg";
-import juice from "../images/juice.jpg";
-import rakija from "../images/rakija.jpg";
-import sparklingDrink from "../images/sparklingDrink.jpg";
-import water from "../images/water.jpg";
-import whisky from "../images/whisky.jpg";
-import wine from "../images/wine.jpg";
-import beer from "../images/beer.jpg";
+import coffePhoto from "../images/drinks/coffePhoto.jpg";
+import alcohol from "../images/drinks/alcohol.jpg";
+import stillDrink from "../images/drinks/stillDrink.jpg";
+import cocktail from "../images/drinks/cocktail.jpg";
+import energyDrink from "../images/drinks/energyDrink.jpg";
+import juice from "../images/drinks/juice.jpg";
+import rakija from "../images/drinks/rakija.jpg";
+import sparklingDrink from "../images/drinks/sparklingDrink.jpg";
+import water from "../images/drinks/water.jpg";
+import whisky from "../images/drinks/whisky.jpg";
+import wine from "../images/drinks/wine.jpg";
+import beer from "../images/drinks/beer.jpg";
 
 const drinks = [
   {

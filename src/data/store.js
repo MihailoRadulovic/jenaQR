@@ -1,9 +1,9 @@
-import bavarska from "../images/bavarska.jpg";
-import muffinBeli from "../images/muffinBeli.jpg";
-import muffinCokolada from "../images/muffinCokolada.jpg";
-import krofnaCokolada from "../images/krofnaCokolada.jpg";
-import krofnaKapri from "../images/krofnaKapri.jpg";
-import kikiriki from "../images/kikiriki.jpg";
+import bavarska from "../images/bakery/bavarska.jpg";
+import muffinBeli from "../images/bakery/muffinBeli.jpg";
+import muffinCokolada from "../images/bakery/muffinCokolada.jpg";
+import krofnaCokolada from "../images/bakery/krofnaCokolada.jpg";
+import krofnaKapri from "../images/bakery/krofnaKapri.jpg";
+import kikiriki from "../images/bakery/kikiriki.jpg";
 
 const store = [
   {
