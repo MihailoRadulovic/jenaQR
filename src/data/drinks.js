@@ -115,6 +115,10 @@ const drinks = [
       { name: "Laško", capacity: "0.33l", price: "240 RSD" },
       { name: "Zaječarsko", capacity: "0.33l", price: "180 RSD" },
     ],
+    items2: [
+      { name: "Birra Moretti točeni", capacity: "0.25l", price: "170 RSD" },
+      { name: "Birra Moretti točeni", capacity: "0.5l", price: "290 RSD" },
+    ],
     photo: beer,
   },
   {
