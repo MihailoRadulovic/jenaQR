@@ -39,25 +39,29 @@ function BotOfItem({ typeOfDrink, loadedData }) {
               </li>
             ))}
           </ul>
-          <p className="text-gray-300 text-2xl p-1.5 font-semibold mt-3">
-            Točeno pivo
-          </p>
-          <ul>
-            {drinkType.items2.map((drink) => (
-              <li
-                key={drink.name}
-                className="text-gray-300 text-xl p-1.5 font-medium"
-              >
-                {drink.name}{" "}
-                <span>
-                  <span className="italic text-lg font-light">
-                    {drink.capacity}
-                  </span>{" "}
-                  - <span className="font-semibold">{drink.price}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
+          {drinkType.category === "Piva" && (
+            <div>
+              <p className="text-gray-300 text-2xl p-1.5 font-semibold mt-3">
+                Točeno pivo
+              </p>
+              <ul>
+                {drinkType.items2.map((drink) => (
+                  <li
+                    key={drink.name}
+                    className="text-gray-300 text-xl p-1.5 font-medium"
+                  >
+                    {drink.name}{" "}
+                    <span>
+                      <span className="italic text-lg font-light">
+                        {drink.capacity}
+                      </span>{" "}
+                      - <span className="font-semibold">{drink.price}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </CSSTransition>
     </div>
