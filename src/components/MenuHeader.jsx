@@ -1,31 +1,45 @@
 import { FaInstagram, FaWifi } from "react-icons/fa6";
 import jenaLogo from "../images/jenaLogo.jpg";
 import Button from "../ui/Button";
+import Language from "./Language";
+import { useTranslation } from "react-i18next";
+import { IoLanguageOutline } from "react-icons/io5";
 
 function MenuHeader({ activeCategory, setActiveCategory }) {
+  const { t } = useTranslation();
   const wifiPassword = "jena2020";
   const instagram = "jena_caffe";
 
   return (
     <>
       <div className="flex items-start gap-3.5 ">
-        <img src={jenaLogo} alt="Jena logo" className="w-[40%] rounded-full " />
-        <h1 className="text-gray-800 mt-[5%] text-3xl font-bold ">
-          Dobrodošli u Jena Kafe!
+        <img
+          src={jenaLogo}
+          alt="Jena logo"
+          className="w-[40%] rounded-full border-3 border-gray-300 shadow-lg transform transition-all duration-500"
+        />
+        <h1
+          className="text-stone-900 mt-[7%] text-4xl font-normal"
+          style={{ fontFamily: "Germania" }}
+        >
+          {t("welcome")}
         </h1>
       </div>
       <div className="text-gray-800">
-        <p className="mt-3 text-xl flex gap-2">
+        <div className="flex items-center gap-2 ">
+          <IoLanguageOutline className="text-3xl" /> <Language />
+        </div>
+        <div className="mt-1 text-xl flex gap-2">
           <div className="flex gap-2 items-center">
             <FaWifi className="text-3xl" />
-            Wi-Fi password:
+            {t("wifi")}:
           </div>
           <span className="font-bold text-2xl text-gray-800">
             {" "}
             {wifiPassword}
           </span>
-        </p>
-        <p className="mt-3 text-xl flex gap-2">
+        </div>
+        <div className="mt-3 text-xl flex gap-2">
           <div className="flex gap-2 items-center">
             <FaInstagram className="text-3xl" /> Instagram:
           </div>
@@ -36,7 +50,7 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
             {" "}
             @{instagram}
           </a>
-        </p>
+        </div>
       </div>
 
       <div className="flex gap-3.5 mt-4">
@@ -44,13 +58,13 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
           active={activeCategory === "Piće"}
           setActive={() => setActiveCategory("Piće")}
         >
-          Piće
+          {t("drinks")}
         </Button>
         <Button
           active={activeCategory === "Pekara"}
           setActive={() => setActiveCategory("Pekara")}
         >
-          Pekara
+          {t("bakery")}
         </Button>
       </div>
     </>

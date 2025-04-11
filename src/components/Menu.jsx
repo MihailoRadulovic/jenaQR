@@ -9,7 +9,7 @@ function Menu() {
 
   return (
     <div
-      className="bg-gray-400 w-[90%] max-h-[90%] top-[5%] bottom-[5%] left-[5%] right-[5%] absolute rounded-4xl shadow-2xl p-4 flex flex-col z-10 overflow-auto font-['Rubik']"
+      className="bg-gray-400 w-[95%] max-h-[97%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-4xl shadow-2xl p-4 flex flex-col z-10 overflow-auto font-['Rubik']"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       <MenuHeader

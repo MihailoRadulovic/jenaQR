@@ -8,7 +8,7 @@ function Background() {
         alt="Background with leafs"
         className="top-0 left-0 w-full h-full object-cover"
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-65"></div>
     </div>
   );
 }

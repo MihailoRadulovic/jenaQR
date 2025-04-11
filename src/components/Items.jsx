@@ -21,7 +21,7 @@ function Items({ typeOfDrink, photo }) {
   };
 
   return (
-    <>
+    <div>
       <div onClick={handleOpen} className="cursor-pointer">
         <TopOfItem typeOfDrink={typeOfDrink} photo={photo} />
       </div>
@@ -36,7 +36,7 @@ function Items({ typeOfDrink, photo }) {
           <BotOfItem typeOfDrink={typeOfDrink} loadedData={loadedData} />
         </div>
       </CSSTransition>
-    </>
+    </div>
   );
 }
 

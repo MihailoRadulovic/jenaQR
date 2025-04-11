@@ -2,10 +2,13 @@ import { useRef, useState } from "react";
 import drinks from "../data/drinks";
 import { CSSTransition } from "react-transition-group";
 import "./animation.css";
+import { useTranslation } from "react-i18next";
 
 function BotOfItem({ typeOfDrink, loadedData }) {
   const [activeMenu] = useState("main");
   const nodeRef = useRef(null);
+
+  const { t } = useTranslation();
 
   if (!loadedData) {
     return null; // Ne prikazuj ništa dok podaci nisu učitani
@@ -29,7 +32,7 @@ function BotOfItem({ typeOfDrink, loadedData }) {
                 key={drink.name}
                 className="text-gray-300 text-xl p-1.5 font-medium"
               >
-                {drink.name}{" "}
+                {t(drink.name)}{" "}
                 <span>
                   <span className="italic text-lg font-light">
                     {drink.capacity}
