@@ -3,8 +3,8 @@
 @font-face {
   font-family: "Germania";
   src:
-    url("Germania.woff2") format("woff2"),
-    url("Germania.woff") format("woff");
+    url("/public/Germania.woff2") format("woff2"),
+    url("/public/Germania.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
