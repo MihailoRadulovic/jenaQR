@@ -44,8 +44,8 @@ function BotOfItem({ typeOfDrink, loadedData }) {
           </ul>
           {drinkType.category === "Piva" && (
             <div>
-              <p className="text-gray-300 text-2xl p-1.5 font-semibold mt-3">
-                Točeno pivo
+              <p className="text-gray-950 text-3xl p-1.5 font-semibold mt-1 italic">
+                {t("Točeno pivo")}
               </p>
               <ul>
                 {drinkType.items2.map((drink) => (
@@ -53,7 +53,7 @@ function BotOfItem({ typeOfDrink, loadedData }) {
                     key={drink.name}
                     className="text-gray-300 text-xl p-1.5 font-medium"
                   >
-                    {drink.name}{" "}
+                    {t(drink.name)}{" "}
                     <span>
                       <span className="italic text-lg font-light">
                         {drink.capacity}

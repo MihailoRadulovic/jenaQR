@@ -34,7 +34,7 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
             <FaWifi className="text-3xl" />
             {t("wifi")}:
           </div>
-          <span className="font-bold text-2xl text-gray-800">
+          <span className="font-medium text-2xl text-gray-800">
             {" "}
             {wifiPassword}
           </span>
@@ -44,7 +44,7 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
             <FaInstagram className="text-3xl" /> Instagram:
           </div>
           <a
-            className="text-gray-800 hover:text-gray-950 font-semibold text-2xl"
+            className="text-gray-800 hover:text-gray-950 font-medium text-2xl"
             href={`https://www.instagram.com/${instagram}`}
           >
             {" "}
