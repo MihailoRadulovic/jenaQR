@@ -36,8 +36,8 @@ function BotOfItem({ typeOfDrink, loadedData }) {
           ))}
         </ul>
         {drinkType.category === "Piva" && (
-          <div className="border-t-1 border-gray-400 ">
-            <p className="text-gray-950 text-3xl p-1.5 font-semibold mt-1 italic">
+          <div className="border-t-1 border-gray-400 mt-1 ">
+            <p className="text-gray-950 text-3xl p-1.5 font-semibold italic">
               {t("Točeno pivo")}
             </p>
             <ul>
