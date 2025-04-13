@@ -19,13 +19,13 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
           className="w-[30%] rounded-full border-3 border-gray-300 shadow-lg transform transition-all duration-500"
         />
         <h1
-          className="text-stone-900 mt-[3%] m text-4xl font-normal"
+          className="text-stone-900 mt-[1%]  text-5xl font-normal"
           style={{ fontFamily: "Germania" }}
         >
           {t("welcome")}
         </h1>
       </div>
-      <div className="text-gray-800 ">
+      <div className="text-gray-800 mt-3 ">
         <div className="flex items-center gap-2 ">
           <IoLanguageOutline className="text-2xl" /> <Language />
         </div>

@@ -9,7 +9,7 @@ function TopOfItem({ photo, typeOfDrink }) {
 
   return (
     <>
-      <div className="bg-lime-950 w-full mx-auto h-23 mt-5 rounded-3xl flex items-center relative border-3 border-gray-300 shadow-lg">
+      <div className="bg-lime-900 w-full mx-auto h-23 mt-5 rounded-3xl flex items-center relative border-3 border-gray-300 shadow-lg">
         {!isLoaded && (
           // <div className="absolute z-10 w-10 h-10 border-4 border-t-lime-950 border-gray-300 rounded-full animate-spin"></div>
           <div className="absolute inset-0 mt-[5%] ml-[5%] z-10">
