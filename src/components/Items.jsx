@@ -5,7 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import "./animation.css";
 import drinks from "../data/drinks";
 
-function Items({ typeOfDrink, photo }) {
+function Items({ typeOfDrink, photo, icon }) {
   const [isOpen, setIsOpen] = useState(false);
   const [loadedData, setLoadedData] = useState(null);
   const nodeRef = useRef(null);
@@ -23,7 +23,7 @@ function Items({ typeOfDrink, photo }) {
   return (
     <div>
       <div onClick={handleOpen} className="cursor-pointer">
-        <TopOfItem typeOfDrink={typeOfDrink} photo={photo} />
+        <TopOfItem typeOfDrink={typeOfDrink} photo={photo} icon={icon} />
       </div>
       <CSSTransition
         in={isOpen}

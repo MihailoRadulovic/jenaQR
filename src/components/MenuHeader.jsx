@@ -16,12 +16,9 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
         <img
           src={jenaLogo}
           alt="Jena logo"
-          className="w-[30%] rounded-full border-3 border-gray-300 shadow-lg transform transition-all duration-500"
+          className="w-[30%] rounded-full shadow-lg transform transition-all duration-500"
         />
-        <h1
-          className="text-stone-900 mt-[1%]  text-5xl font-normal"
-          style={{ fontFamily: "Germania" }}
-        >
+        <h1 className="text-stone-900 mt-0.5 text-[2rem] font-normal">
           {t("welcome")}
         </h1>
       </div>

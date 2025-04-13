@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
-@font-face {
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --asparagus-50: #f3f8ed;
+  --asparagus-100: #e4f0d7;
+  --asparagus-200: #cae3b3;
+  --asparagus-300: #a8d086;
+  --asparagus-400: #8abb60;
+  --asparagus-500: #70a845; /* glavna boja */
+  --asparagus-600: #527f31;
+  --asparagus-700: #3f6229;
+  --asparagus-800: #364f25;
+  --asparagus-900: #2f4423;
+  --asparagus-950: #16240f;
+}
+
+/* @font-face {
   font-family: "Germania";
   src:
     url("/public/Germania.woff2") format("woff2"),
@@ -8,4 +26,4 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */

@@ -19,8 +19,10 @@ function Language() {
           <button
             title="Srpski"
             onClick={() => changeLanguage("sr")}
-            className={`border-2 p-1.5 bg-gray-100 dark:bg-gray-700 rounded-full  ${
-              currentLang === "sr" ? "border-lime-800" : "border-transparent"
+            className={`p-2  rounded-full  ${
+              currentLang === "sr"
+                ? "bg-[var(--asparagus-700)]"
+                : "bg-[var(--asparagus-900)]"
             }`}
           >
             <img
@@ -33,17 +35,20 @@ function Language() {
           </button>
           <button
             title="English"
-            onClick={() => changeLanguage("en")}
-            className={`border-2 p-1.5 bg-gray-100 dark:bg-gray-700 rounded-full ${
-              currentLang === "en" ? "border-lime-800" : "border-transparent"
+            onClick={() => changeLanguage("uk")}
+            className={`p-2  rounded-full ${
+              currentLang === "uk"
+                ? "bg-[var(--asparagus-700)]"
+                : "bg-[var(--asparagus-900)]"
             }`}
           >
             <img
-              src="https://flagcdn.com/24x18/us.png"
-              srcSet="https://flagcdn.com/48x36/us.png 2x"
+              src="https://flagcdn.com/16x12/gb.png"
+              srcSet="https://flagcdn.com/32x24/gb.png 2x,
+    https://flagcdn.com/48x36/gb.png 3x"
               width="25"
               height="24"
-              alt="US Flag"
+              alt="United Kingdom"
             />
           </button>
         </div>

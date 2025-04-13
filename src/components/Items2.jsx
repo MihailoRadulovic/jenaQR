@@ -55,7 +55,7 @@ function Items2() {
       {store.map((element) => (
         <div
           key={element.id}
-          className=" border-3 border-lime-950 bg-gray-300 
+          className=" border-3 border-[var(--asparagus-900)] bg-[var(--asparagus-700)] text-[var(--asparagus-100)]
           text-center rounded-2xl shadow-md p-0.5"
         >
           <div
@@ -76,8 +76,8 @@ function Items2() {
               onLoad={() => handleImageLoad(element.id)}
             />
           </div>
-          <p className="font-semibold text-xl">{t(element.category)}</p>
-          <p className="font-bold text-xl mt-2">{element.price}</p>
+          <p className="font-normal text-xl">{t(element.category)}</p>
+          <p className="font-normal text-xl mt-2">{element.price}</p>
         </div>
       ))}
     </div>

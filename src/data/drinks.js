@@ -15,6 +15,7 @@ const drinks = [
   {
     id: 1,
     category: "Kafe i topli napici",
+    icon: "BiSolidCoffeeBean",
     items: [
       { name: "Espresso", price: "150 RSD" },
       { name: "Espresso sa mlekom", price: "160 RSD" },
@@ -40,6 +41,7 @@ const drinks = [
   {
     id: 2,
     category: "Vode",
+    icon: "IoWater",
     items: [
       { name: "Aqua Viva", capacity: "0.25l", price: "150 RSD" },
       { name: "Knjaz Miloš", capacity: "0.25l", price: "150 RSD" },
@@ -50,6 +52,7 @@ const drinks = [
   {
     id: 3,
     category: "Sveže ceđeno",
+    icon: "GiManualJuicer",
     items: [
       { name: "Limunada", capacity: "0.2l", price: "210 RSD" },
       {
@@ -67,6 +70,7 @@ const drinks = [
   {
     id: 4,
     category: "Negazirani sokovi",
+    icon: "RiDrinks2Fill ",
     items: [
       { name: "Pomorandža GUSTO", capacity: "0.2l", price: "190 RSD" },
       { name: "Jabuka GUSTO", capacity: "0.2l", price: "190 RSD" },
@@ -84,6 +88,7 @@ const drinks = [
   {
     id: 5,
     category: "Gazirani sokovi",
+    icon: "TbBrandPepsi ",
     items: [
       { name: "Pepsi", capacity: "0.25l", price: "190 RSD" },
       { name: "Pepsi Max", capacity: "0.25l", price: "190 RSD" },
@@ -100,6 +105,7 @@ const drinks = [
   {
     id: 6,
     category: "Energetska pića",
+    icon: "SlEnergy ",
     items: [
       { name: "Guarana", capacity: "0.25l", price: "200 RSD" },
       { name: "Red Bull", capacity: "0.25l", price: "350 RSD" },
@@ -109,6 +115,7 @@ const drinks = [
   {
     id: 7,
     category: "Piva",
+    icon: "IoBeer ",
     items: [
       { name: "Heineken", capacity: "0.25l", price: "300 RSD" },
       { name: "Birra Moretti", capacity: "0.33l", price: "230 RSD" },
@@ -132,6 +139,7 @@ const drinks = [
   {
     id: 8,
     category: "Viski",
+    icon: "FaGlassWhiskey ",
     items: [
       { name: "Ballantineis", capacity: "0.03l", price: "250 RSD" },
       { name: "Johnnie Walker", capacity: "0.03l", price: "250 RSD" },
@@ -143,6 +151,7 @@ const drinks = [
   {
     id: 9,
     category: "Alkoholna pića",
+    icon: "TbGlassChampagne ",
     items: [
       { name: "Gin", capacity: "0.03l", price: "210 RSD" },
       { name: "Rum Havana", capacity: "0.03l", price: "190 RSD" },
@@ -158,6 +167,7 @@ const drinks = [
   {
     id: 10,
     category: "Rakije",
+    icon: "LiaGlassWhiskeySolid ",
     items: [
       { name: `Viljamovka "Takovo"`, capacity: "0.03l", price: "210 RSD" },
       { name: "Rakija od dunnje", capacity: "0.03l", price: "190 RSD" },
@@ -170,6 +180,7 @@ const drinks = [
   {
     id: 11,
     category: "Vina",
+    icon: "FaWineGlassAlt ",
     items: [
       { name: "Međaš belo", capacity: "0.187l", price: "290 RSD" },
       { name: "Međaš crno", capacity: "0.187l", price: "290 RSD" },
@@ -184,6 +195,7 @@ const drinks = [
   {
     id: 12,
     category: "Kokteli",
+    icon: "FaCocktail ",
     items: [
       { name: "Blue frog / red frog", capacity: "0.3l", price: "410 RSD" },
       { name: "Sex on the beach", capacity: "0.2l", price: "360 RSD" },
