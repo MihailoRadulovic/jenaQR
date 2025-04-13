@@ -12,7 +12,7 @@ function Language() {
 
   return (
     <div className="flex items-center gap-2">
-      <p className="text-xl font-normal">{t("language")}</p>
+      <p className="text-lg font-normal">{t("language")}</p>
       <div className="flex">
         {/*rounded-2xl shadow-md dark:bg-gray-800 bg-white w-fit px-1*/}
         <div className="flex rounded-2xl w-full gap-2 px-2 py-2 items-baseline">
@@ -26,7 +26,7 @@ function Language() {
             <img
               src="https://flagcdn.com/24x18/rs.png"
               srcSet="https://flagcdn.com/48x36/rs.png 2x"
-              width="30"
+              width="25"
               height="24"
               alt="Srpska zastava"
             />
@@ -41,7 +41,7 @@ function Language() {
             <img
               src="https://flagcdn.com/24x18/us.png"
               srcSet="https://flagcdn.com/48x36/us.png 2x"
-              width="30"
+              width="25"
               height="24"
               alt="US Flag"
             />

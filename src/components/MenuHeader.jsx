@@ -16,35 +16,35 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
         <img
           src={jenaLogo}
           alt="Jena logo"
-          className="w-[40%] rounded-full border-3 border-gray-300 shadow-lg transform transition-all duration-500"
+          className="w-[30%] rounded-full border-3 border-gray-300 shadow-lg transform transition-all duration-500"
         />
         <h1
-          className="text-stone-900 mt-[7%] text-4xl font-normal"
+          className="text-stone-900 mt-[3%] m text-4xl font-normal"
           style={{ fontFamily: "Germania" }}
         >
           {t("welcome")}
         </h1>
       </div>
-      <div className="text-gray-800">
+      <div className="text-gray-800 ">
         <div className="flex items-center gap-2 ">
-          <IoLanguageOutline className="text-3xl" /> <Language />
+          <IoLanguageOutline className="text-2xl" /> <Language />
         </div>
-        <div className="mt-1 text-xl flex gap-2">
+        <div className=" text-lg flex gap-2">
           <div className="flex gap-2 items-center">
-            <FaWifi className="text-3xl" />
+            <FaWifi className="text-2xl" />
             {t("wifi")}:
           </div>
-          <span className="font-medium text-2xl text-gray-800">
+          <span className="font-medium text-xl text-gray-800">
             {" "}
             {wifiPassword}
           </span>
         </div>
-        <div className="mt-3 text-xl flex gap-2">
+        <div className="mt-3 text-lg flex gap-2">
           <div className="flex gap-2 items-center">
-            <FaInstagram className="text-3xl" /> Instagram:
+            <FaInstagram className="text-2xl" /> Instagram:
           </div>
           <a
-            className="text-gray-800 hover:text-gray-950 font-medium text-2xl"
+            className="text-gray-800 hover:text-gray-950 font-medium text-xl"
             href={`https://www.instagram.com/${instagram}`}
           >
             {" "}
@@ -53,7 +53,7 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
         </div>
       </div>
 
-      <div className="flex gap-3.5 mt-4">
+      <div className="flex gap-3.5 mt-2">
         <Button
           active={activeCategory === "Piće"}
           setActive={() => setActiveCategory("Piće")}
