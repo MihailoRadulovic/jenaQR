@@ -51,12 +51,12 @@ function Items2() {
   };
 
   return (
-    <div className="grid grid-cols-2 grid-rows-3 mt-5 gap-2">
+    <div className="grid grid-cols-2 grid-rows-3 mt-5 gap-2 ">
       {store.map((element) => (
         <div
           key={element.id}
-          className=" border-3 border-[var(--asparagus-900)] bg-[var(--asparagus-700)] text-[var(--asparagus-100)]
-          text-center rounded-2xl shadow-md p-0.5"
+          className="bg-[var(--asparagus-950)] text-[var(--asparagus-100)]
+          text-center rounded-2xl shadow-md p-1"
         >
           <div
             className="w-full h-40 relative rounded-t-2xl 
@@ -71,13 +71,13 @@ function Items2() {
             <img
               src={element.photo}
               alt="element"
-              className="w-full h-full object-cover rounded-t-2xl"
+              className="w-full h-full object-cover rounded-2xl"
               style={{ display: loadedImages[element.id] ? "block" : "none" }}
               onLoad={() => handleImageLoad(element.id)}
             />
           </div>
-          <p className="font-normal text-xl">{t(element.category)}</p>
-          <p className="font-normal text-xl mt-2">{element.price}</p>
+          <p className="font-light text-xl">{t(element.category)}</p>
+          <p className="font-light text-xl mt-1">{element.price}</p>
         </div>
       ))}
     </div>

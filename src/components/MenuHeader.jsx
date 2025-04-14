@@ -41,7 +41,7 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
             <FaInstagram className="text-2xl" /> Instagram:
           </div>
           <a
-            className="text-gray-800 hover:text-gray-950 font-medium text-xl"
+            className="text-gray-950 font-semibold text-xl"
             href={`https://www.instagram.com/${instagram}`}
           >
             {" "}

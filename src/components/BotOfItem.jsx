@@ -22,14 +22,14 @@ function BotOfItem({ typeOfDrink, loadedData }) {
           {drinkType.items.map((drink) => (
             <li
               key={drink.name}
-              className={`text-[var(--asparagus-100)] text-xl p-1.5 font-medium  ${drink === lastDrink ? "" : "border-b-1 border-[var(--asparagus-200)] border-dotted"}`}
+              className={`text-[var(--asparagus-100)] text-xl p-1.5 font-light  ${drink === lastDrink ? "" : "border-b-1 border-[var(--asparagus-600)] border-dotted"}`}
             >
               {t(drink.name)}{" "}
               <span>
                 <span className="italic text-lg font-light">
                   {drink.capacity}
                 </span>{" "}
-                - <span className="font-medium">{drink.price}</span>
+                - <span className="font-light">{drink.price}</span>
               </span>
             </li>
           ))}
