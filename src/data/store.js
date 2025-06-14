@@ -38,6 +38,24 @@ const store = [
   },
   {
     id: 6,
+    category: "Kroasan",
+    price: "100 RSD",
+    photo: kikiriki,
+  },
+  {
+    id: 7,
+    category: "Kroasan nutela",
+    price: "140 RSD",
+    photo: kikiriki,
+  },
+  {
+    id: 8,
+    category: "Kroasan nutela",
+    price: "150 RSD",
+    photo: kikiriki,
+  },
+  {
+    id: 9,
     category: "Kikiriki (100g)",
     price: "160 RSD",
     photo: kikiriki,
