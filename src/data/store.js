@@ -1,9 +1,12 @@
 import bavarska from "../images/bakery/bavarska.jpg";
 import muffinBeli from "../images/bakery/muffinBeli.jpg";
-import muffinCokolada from "../images/bakery/muffinCokolada.jpg";
+import muffinCokolada2 from "../images/bakery/muffinCokolada2.jpg";
 import krofnaCokolada from "../images/bakery/krofnaCokolada.jpg";
-import krofnaKapri from "../images/bakery/krofnaKapri.jpg";
+import krofnaKapri2 from "../images/bakery/krofnaKapri2.jpg";
 import kikiriki from "../images/bakery/kikiriki.jpg";
+import kroasan from "../images/bakery/kroasan";
+import kroasanPistac from "../images/bakery/kroasanPistac";
+import kroasanNutela from "../images/bakery/kroasanNutela";
 
 const store = [
   {
@@ -16,7 +19,7 @@ const store = [
     id: 2,
     category: "Mafin (crni)",
     price: "120 RSD",
-    photo: muffinCokolada,
+    photo: muffinCokolada2,
   },
   {
     id: 3,
@@ -34,25 +37,25 @@ const store = [
     id: 5,
     category: "Krofna (kapri)",
     price: "130 RSD",
-    photo: krofnaKapri,
+    photo: krofnaKapri2,
   },
   {
     id: 6,
     category: "Kroasan",
     price: "100 RSD",
-    photo: kikiriki,
+    photo: kroasan,
   },
   {
     id: 7,
     category: "Kroasan nutela",
     price: "140 RSD",
-    photo: kikiriki,
+    photo: kroasanNutela,
   },
   {
     id: 8,
     category: "Kroasan nutela",
     price: "150 RSD",
-    photo: kikiriki,
+    photo: kroasanPistac,
   },
   {
     id: 9,
