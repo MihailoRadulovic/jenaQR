@@ -4,9 +4,9 @@ import muffinCokolada2 from "../images/bakery/muffinCokolada2.jpg";
 import krofnaCokolada from "../images/bakery/krofnaCokolada.jpg";
 import krofnaKapri2 from "../images/bakery/krofnaKapri2.jpg";
 import kikiriki from "../images/bakery/kikiriki.jpg";
-import kroasan from "../images/bakery/kroasan";
-import kroasanPistac from "../images/bakery/kroasanPistac";
-import kroasanNutela from "../images/bakery/kroasanNutela";
+import kroasan from "../images/bakery/kroasan.jpg";
+import kroasanPistac from "../images/bakery/kroasanPistac.jpg";
+import kroasanNutela from "../images/bakery/kroasanNutela.jpg";
 
 const store = [
   {
