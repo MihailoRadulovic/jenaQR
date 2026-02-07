@@ -56,12 +56,24 @@ const drinks = [
     items: [
       { name: "Limunada", capacity: "0.2l", price: "210 RSD" },
       {
-        name: "Limunada (mango, voćne strasti, mohito, kiwi, lubenica, šumsko voće, zova, jagoda, kivi)",
+        name: "Limunada sa ukusom",
+        variants: [
+          "mango",
+          "vocne_strasti",
+          "mohito",
+          "lubenica",
+          "sumsko_voce",
+          "zova",
+          "jagoda",
+          "kivi",
+        ],
+
         capacity: "0.3l",
         price: "260 RSD",
       },
       {
-        name: "Ice Tea homemade (mango, breskva, marakuja, malina)",
+        name: "Ice Tea homemade",
+        variants: ["mango", "breskva", "marakuja", "malina"],
         capacity: "0.3l",
         price: "260 RSD",
       },

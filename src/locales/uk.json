@@ -43,11 +43,24 @@
   "Knjaz Miloš limun": "Knjaz Miloš lemon",
 
   "Limunada": "Lemonade",
-  "Limunada (mango, voćne strasti, mohito, kiwi, lubenica, šumsko voće)": "Lemonade (mango, fruit passion, mojito, kiwi, watermelon, forest fruit)",
+  "Limunada with flavor": "Lemonade with flavor",
   "Ice Tea homemade": "Homemade Ice Tea",
   "Ceđena pomorandža": "Freshly squeezed orange",
   "Ceđeni grejp": "Freshly squeezed grapefruit",
   "Ceđeni mix": "Freshly squeezed mix",
+  "variants": {
+    "mango": "mango",
+    "vocne_strasti": "passion fruit",
+    "mohito": "mojito",
+    "lubenica": "watermelon",
+    "sumsko_voce": "forest fruits",
+    "zova": "elderflower",
+    "jagoda": "strawberry",
+    "kivi": "kiwi",
+    "breskva": "peach",
+    "marakuja": "passion fruit",
+    "malina": "raspberry"
+  },
 
   "Pomorandža GUSTO": "Orange GUSTO",
   "Jabuka GUSTO": "Apple GUSTO",

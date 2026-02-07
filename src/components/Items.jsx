@@ -5,16 +5,14 @@ import { CSSTransition } from "react-transition-group";
 import "./animation.css";
 import drinks from "../data/drinks";
 
-function Items({ typeOfDrink, photo, icon }) {
-  const [isOpen, setIsOpen] = useState(false);
+function Items({ typeOfDrink, photo, icon, isOpen, onToggle, setHeaderRef }) {
   const [loadedData, setLoadedData] = useState(null);
   const nodeRef = useRef(null);
 
-  // Kada se klikne na TopOfItem, odloži učitavanje podataka
   const handleOpen = () => {
-    setIsOpen(!isOpen);
+    onToggle();
+
     if (!loadedData) {
-      // Učitavanje podataka iz store samo kad je potrebno
       const drinkData = drinks.find((item) => item.category === typeOfDrink);
       setLoadedData(drinkData);
     }
@@ -22,9 +20,15 @@ function Items({ typeOfDrink, photo, icon }) {
 
   return (
     <div>
-      <div onClick={handleOpen} className="cursor-pointer">
-        <TopOfItem typeOfDrink={typeOfDrink} photo={photo} icon={icon} />
+      <div ref={setHeaderRef} onClick={handleOpen} className="cursor-pointer">
+        <TopOfItem
+          typeOfDrink={typeOfDrink}
+          photo={photo}
+          icon={icon}
+          isOpen={isOpen}
+        />
       </div>
+
       <CSSTransition
         in={isOpen}
         timeout={500}

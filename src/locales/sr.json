@@ -44,11 +44,24 @@
   "Knjaz Miloš limun": "Knjaz Miloš limun",
 
   "Limunada": "Limunada",
-  "Limunada (mango, voćne strasti, mohito, kiwi, lubenica, šumsko voće)": "Limunada (mango, voćne strasti, mohito, kiwi, lubenica, šumsko voće)",
+  "Limunada sa ukusom": "Limunada sa ukusom",
   "Ice Tea homemade": "Ice Tea homemade",
   "Ceđena pomorandža": "Ceđena pomorandža",
   "Ceđeni grejp": "Ceđeni grejp",
   "Ceđeni mix": "Ceđeni mix",
+  "variants": {
+    "mango": "mango",
+    "vocne_strasti": "voćne strasti",
+    "mohito": "mohito",
+    "lubenica": "lubenica",
+    "sumsko_voce": "šumsko voće",
+    "zova": "zova",
+    "jagoda": "jagoda",
+    "kivi": "kivi",
+    "breskva": "breskva",
+    "marakuja": "marakuja",
+    "malina": "malina"
+  },
 
   "Pomorandža GUSTO": "Pomorandža GUSTO",
   "Jabuka GUSTO": "Jabuka GUSTO",
