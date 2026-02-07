@@ -27,7 +27,7 @@ function BotOfItem({ typeOfDrink, loadedData }) {
               ${
                 isLast
                   ? ""
-                  : "border-b border-[var(--asparagus-600)] border-dotted"
+                  : "border-b border-[var(--asparagus-500)] border-dotted"
               }`}
           >
             <div className="flex items-start justify-between gap-3">
