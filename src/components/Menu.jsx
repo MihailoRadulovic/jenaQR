@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import Items2 from "./Items2";
 
 function Menu() {
-  const ANIM_MS = 350;
+  const ANIM_MS = 350;    // čekanje da se zatvori (malo više od 320ms grid animacije)
+  const OPEN_DELAY = 80;  // pauza između snap skrola i otvaranja
 
   const [activeCategory, setActiveCategory] = useState("Piće");
   const [openCategory, setOpenCategory] = useState(null);
@@ -13,81 +14,53 @@ function Menu() {
 
   const scrollContainerRef = useRef(null);
   const headerRefs = useRef({}); // { [category]: HTMLElement }
-  const pendingScrollTarget = useRef(null);
 
-  const SCROLL_OFFSET = 24; // koliko da bude "još malo više" iznad headera
+  const SCROLL_OFFSET = 24; // koliko da bude iznad vrha
 
-  const scrollToHeader = (cat, layoutShiftUp = 0) => {
+  const snapToHeader = (cat) => {
     const container = scrollContainerRef.current;
     const el = headerRefs.current[cat];
-    if (!container || !el) return null;
-
-    const cRect = container.getBoundingClientRect();
-    const eRect = el.getBoundingClientRect();
-    const delta = eRect.top - cRect.top;
-    const targetTop = Math.max(0, container.scrollTop + delta - SCROLL_OFFSET - layoutShiftUp);
-
-    container.scrollTo({ top: targetTop, behavior: "smooth" });
-    return targetTop;
+    if (!container || !el) return;
+    const delta = el.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    container.scrollTop = Math.max(0, container.scrollTop + delta - SCROLL_OFFSET);
   };
 
   const handleToggle = (cat) => {
-    // klik na otvoren -> zatvori
+    // klik na otvoren -> samo zatvori
     if (openCategory === cat) {
       setOpenCategory(null);
       return;
     }
 
-    // ako ništa otvoreno -> otvori i skroluj
+    // ništa otvoreno -> snap skrol pa otvori
     if (!openCategory) {
-      setOpenCategory(cat);
-      requestAnimationFrame(() => scrollToHeader(cat));
+      snapToHeader(cat);
+      setTimeout(() => setOpenCategory(cat), OPEN_DELAY);
       return;
     }
 
-    // nešto je otvoreno -> izračunaj layout shift pa skroluj simultano sa zatvaranjem
-    const openEl = headerRefs.current[openCategory];
-    const targetEl = headerRefs.current[cat];
-    let layoutShift = 0;
-
-    if (openEl && targetEl) {
-      const openIsAbove =
-        openEl.getBoundingClientRect().top < targetEl.getBoundingClientRect().top;
-      if (openIsAbove) {
-        const inner = openEl.parentElement?.querySelector(
-          ".accordion-grid .accordion-inner"
-        );
-        layoutShift = inner ? inner.scrollHeight : 0;
-      }
-    }
-
+    // nešto je otvoreno -> zatvori, useEffect čeka pa snap + otvori
     setPendingCategory(cat);
     setOpenCategory(null);
-
-    requestAnimationFrame(() => {
-      pendingScrollTarget.current = scrollToHeader(cat, layoutShift);
-    });
   };
 
   useEffect(() => {
     if (openCategory === null && pendingCategory) {
       const cat = pendingCategory;
+      let openTimeout;
 
-      const id = setTimeout(() => {
-        // Snap na tačnu poziciju pre otvaranja (u slučaju da smooth scroll još traje)
-        if (pendingScrollTarget.current !== null) {
-          const container = scrollContainerRef.current;
-          if (container) {
-            container.scrollTo({ top: pendingScrollTarget.current, behavior: "instant" });
-          }
-          pendingScrollTarget.current = null;
-        }
-
-        setOpenCategory(cat);
-        setPendingCategory(null);
+      const closeTimeout = setTimeout(() => {
+        snapToHeader(cat);
+        openTimeout = setTimeout(() => {
+          setOpenCategory(cat);
+          setPendingCategory(null);
+        }, OPEN_DELAY);
       }, ANIM_MS);
 
-      return () => clearTimeout(id);
+      return () => {
+        clearTimeout(closeTimeout);
+        clearTimeout(openTimeout);
+      };
     }
   }, [openCategory, pendingCategory]);
 
