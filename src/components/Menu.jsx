@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Items2 from "./Items2";
 
 function Menu() {
-  const ANIM_MS = 500;
+  const ANIM_MS = 350;
 
   const [activeCategory, setActiveCategory] = useState("Piće");
   const [openCategory, setOpenCategory] = useState(null);
@@ -13,24 +13,22 @@ function Menu() {
 
   const scrollContainerRef = useRef(null);
   const headerRefs = useRef({}); // { [category]: HTMLElement }
+  const pendingScrollTarget = useRef(null);
 
   const SCROLL_OFFSET = 24; // koliko da bude "još malo više" iznad headera
 
-  const scrollToHeader = (cat) => {
+  const scrollToHeader = (cat, layoutShiftUp = 0) => {
     const container = scrollContainerRef.current;
     const el = headerRefs.current[cat];
-    if (!container || !el) return;
+    if (!container || !el) return null;
 
     const cRect = container.getBoundingClientRect();
     const eRect = el.getBoundingClientRect();
-
-    // koliko je element udaljen od vrha container-a trenutno
     const delta = eRect.top - cRect.top;
+    const targetTop = Math.max(0, container.scrollTop + delta - SCROLL_OFFSET - layoutShiftUp);
 
-    // trenutni scroll + delta - offset
-    const targetTop = container.scrollTop + delta - SCROLL_OFFSET;
-
-    container.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
+    container.scrollTo({ top: targetTop, behavior: "smooth" });
+    return targetTop;
   };
 
   const handleToggle = (cat) => {
@@ -47,9 +45,28 @@ function Menu() {
       return;
     }
 
-    // nešto je otvoreno -> prvo zatvori, pa otvori traženi
+    // nešto je otvoreno -> izračunaj layout shift pa skroluj simultano sa zatvaranjem
+    const openEl = headerRefs.current[openCategory];
+    const targetEl = headerRefs.current[cat];
+    let layoutShift = 0;
+
+    if (openEl && targetEl) {
+      const openIsAbove =
+        openEl.getBoundingClientRect().top < targetEl.getBoundingClientRect().top;
+      if (openIsAbove) {
+        const inner = openEl.parentElement?.querySelector(
+          ".accordion-grid .accordion-inner"
+        );
+        layoutShift = inner ? inner.scrollHeight : 0;
+      }
+    }
+
     setPendingCategory(cat);
     setOpenCategory(null);
+
+    requestAnimationFrame(() => {
+      pendingScrollTarget.current = scrollToHeader(cat, layoutShift);
+    });
   };
 
   useEffect(() => {
@@ -57,13 +74,17 @@ function Menu() {
       const cat = pendingCategory;
 
       const id = setTimeout(() => {
+        // Snap na tačnu poziciju pre otvaranja (u slučaju da smooth scroll još traje)
+        if (pendingScrollTarget.current !== null) {
+          const container = scrollContainerRef.current;
+          if (container) {
+            container.scrollTo({ top: pendingScrollTarget.current, behavior: "instant" });
+          }
+          pendingScrollTarget.current = null;
+        }
+
         setOpenCategory(cat);
         setPendingCategory(null);
-
-        // skrol tek kad je novi header renderovan
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => scrollToHeader(cat));
-        });
       }, ANIM_MS);
 
       return () => clearTimeout(id);
@@ -86,7 +107,6 @@ function Menu() {
           <Items
             key={drink.id}
             typeOfDrink={drink.category}
-            photo={drink.photo}
             icon={drink.icon}
             isOpen={openCategory === drink.category}
             onToggle={() => handleToggle(drink.category)}

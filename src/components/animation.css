@@ -1,37 +1,23 @@
-/* animation.css */
+/* animation.css - CSS Grid accordion animacija */
 
-/* Animacija pri ulasku */
-.menu-primary-enter {
+.accordion-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-grid.open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+  min-height: 0;
   opacity: 0;
-  transform: scaleY(
-    0
-  ); /* Početna pozicija (komponenta je potpuno sklopljena) */
-  transform-origin: top; /* Postavljamo početnu tačku za transformaciju na gornji deo */
+  transition: opacity 280ms ease 60ms;
 }
 
-.menu-primary-enter-active {
+.accordion-grid.open .accordion-inner {
   opacity: 1;
-  transform: scaleY(1); /* Komponenta se širi prema dolje */
-  transition:
-    opacity 500ms ease,
-    transform 500ms ease; /* Animacija za opacity i scaleY */
-  will-change: transform, opacity;
-}
-
-/* Animacija pri izlasku */
-.menu-primary-exit {
-  opacity: 1;
-  transform: scaleY(
-    1
-  ); /* Početna pozicija pri izlasku (komponenta je potpuno otvorena) */
-  transform-origin: top; /* Postavljamo početnu tačku za transformaciju na gornji deo */
-}
-
-.menu-primary-exit-active {
-  opacity: 0;
-  transform: scaleY(0); /* Komponenta se smanjuje prema gore */
-  transition:
-    opacity 500ms ease,
-    transform 500ms ease; /* Animacija za opacity i scaleY */
-  will-change: transform, opacity;
+  transition: opacity 300ms ease 80ms;
 }

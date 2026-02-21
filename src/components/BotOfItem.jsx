@@ -42,6 +42,12 @@ function BotOfItem({ typeOfDrink, loadedData }) {
                     {drink.variants.map((v) => t(`variants.${v}`)).join(", ")}
                   </span>
                 )}
+
+                {drink.ingredients?.length > 0 && (
+                  <span className="mt-0.5 block text-sm leading-relaxed text-[var(--asparagus-200)]/85 italic">
+                    {drink.ingredients.map((i) => t(`ingredients.${i}`)).join(", ")}
+                  </span>
+                )}
               </div>
 
               {/* Cena */}

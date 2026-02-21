@@ -1,9 +1,8 @@
-// import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaChevronDown } from "react-icons/fa6";
 import drinksIcons from "../data/drinksIcons";
 
-function TopOfItem({ photo, typeOfDrink, icon, isOpen }) {
+function TopOfItem({ typeOfDrink, icon, isOpen }) {
   const { t } = useTranslation();
 
   const drink = drinksIcons.find((drink) => drink.category === typeOfDrink);
