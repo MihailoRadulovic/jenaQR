@@ -1,42 +1,28 @@
-import coffePhoto from "../images/drinks/coffePhoto.jpg";
-import alcohol from "../images/drinks/alcohol.jpg";
-import stillDrink from "../images/drinks/stillDrink.jpg";
-import cocktail from "../images/drinks/cocktail.jpg";
-import energyDrink from "../images/drinks/energyDrink.jpg";
-import juice from "../images/drinks/juice.jpg";
-import rakija from "../images/drinks/rakija.jpg";
-import sparklingDrink from "../images/drinks/sparklingDrink.jpg";
-import water from "../images/drinks/water.jpg";
-import whisky from "../images/drinks/whisky.jpg";
-import wine from "../images/drinks/wine.jpg";
-import beer from "../images/drinks/beer.jpg";
-
 const drinks = [
   {
     id: 1,
     category: "Kafe i topli napici",
     icon: "BiSolidCoffeeBean",
     items: [
-      { name: "Espresso", price: "150 RSD" },
-      { name: "Espresso sa mlekom", price: "160 RSD" },
-      { name: "Cappuccino", price: "180 RSD" },
-      { name: "Nescafe", price: "190 RSD" },
-      { name: "Mocha Cafe", price: "220 RSD" },
-      { name: "Latte Macchiato", price: "220 RSD" },
-      { name: "Ice Coffee", price: "210 RSD" },
-      { name: "Domaća kafa", price: "120 RSD" },
-      { name: "Domaća kafa sa mlekom", price: "130 RSD" },
-      { name: "Espresso sa sojinim mlekom", price: "200 RSD" },
-      { name: "Nes sa sojinim mlekom", price: "210 RSD" },
-      { name: "Topla čokolada", price: "210 RSD" },
-      { name: "Čaj Dolcezza", price: "190 RSD" },
-      { name: "Plazma shake", price: "300 RSD" },
-      { name: "Jena Coffee", price: "190 RSD" },
-      { name: "Americano", price: "160 RSD" },
-      { name: "Med", price: "30 RSD" },
-      { name: "Šlag", price: "30 RSD" },
+      { name: "Espresso", capacity: "0.03l", price: "150 RSD" },
+      { name: "Espresso sa mlekom", capacity: "0.05l", price: "170 RSD" },
+      { name: "Cappuccino", capacity: "0.15l", price: "200 RSD" },
+      { name: "Nescafe", capacity: "0.2l", price: "190 RSD" },
+      { name: "Mocha Cafe", capacity: "0.2l", price: "230 RSD" },
+      { name: "Latte Macchiato", capacity: "0.25l", price: "230 RSD" },
+      { name: "Ice Coffee", capacity: "0.25l", price: "220 RSD" },
+      { name: "Domaća kafa", capacity: "0.15l", price: "130 RSD" },
+      { name: "Domaća kafa sa mlekom", capacity: "0.15l", price: "150 RSD" },
+      { name: "Espresso sa sojinim mlekom", capacity: "0.05l", price: "210 RSD" },
+      { name: "Nes sa sojinim mlekom", capacity: "0.2l", price: "230 RSD" },
+      { name: "Topla čokolada", capacity: "0.2l", price: "220 RSD" },
+      { name: "Čaj Dolcezza", capacity: "0.2l", price: "200 RSD" },
+      { name: "Plazma shake", capacity: "0.3l", price: "300 RSD" },
+      { name: "Jena Coffee", capacity: "0.2l", price: "200 RSD" },
+      { name: "Americano", capacity: "0.15l", price: "170 RSD" },
+      { name: "Med", capacity: "1 komad", price: "40 RSD" },
+      { name: "Šlag", price: "40 RSD" },
     ],
-    photo: coffePhoto,
   },
   {
     id: 2,
@@ -47,14 +33,13 @@ const drinks = [
       { name: "Knjaz Miloš", capacity: "0.25l", price: "160 RSD" },
       { name: "Knjaz Miloš limun", capacity: "0.33l", price: "180 RSD" },
     ],
-    photo: water,
   },
   {
     id: 3,
     category: "Sveže ceđeno",
     icon: "GiManualJuicer",
     items: [
-      { name: "Limunada", capacity: "0.2l", price: "210 RSD" },
+      { name: "Limunada", capacity: "0.2l", price: "220 RSD" },
       {
         name: "Limunada sa ukusom",
         variants: [
@@ -67,21 +52,19 @@ const drinks = [
           "jagoda",
           "kivi",
         ],
-
         capacity: "0.3l",
-        price: "260 RSD",
+        price: "270 RSD",
       },
       {
         name: "Ice Tea homemade",
         variants: ["mango", "breskva", "marakuja", "malina"],
         capacity: "0.3l",
-        price: "260 RSD",
+        price: "270 RSD",
       },
-      { name: "Ceđena pomorandža", capacity: "0.2l", price: "270 RSD" },
-      { name: "Ceđeni grejp", capacity: "0.3l", price: "290 RSD" },
-      { name: "Ceđeni mix", capacity: "0.3l", price: "320 RSD" },
+      { name: "Ceđena pomorandža", capacity: "0.2l", price: "300 RSD" },
+      { name: "Ceđeni grejp", capacity: "0.3l", price: "310 RSD" },
+      { name: "Ceđeni mix", capacity: "0.3l", price: "350 RSD" },
     ],
-    photo: juice,
   },
   {
     id: 4,
@@ -99,7 +82,6 @@ const drinks = [
       { name: "Cedevita limeta", price: "180 RSD" },
       { name: "Fuze tea", capacity: "0.33l", price: "190 RSD" },
     ],
-    photo: stillDrink,
   },
   {
     id: 5,
@@ -116,7 +98,6 @@ const drinks = [
       { name: "Cockta free", price: "200 RSD" },
       { name: "Orangina", capacity: "0.25l", price: "250 RSD" },
     ],
-    photo: sparklingDrink,
   },
   {
     id: 6,
@@ -126,7 +107,6 @@ const drinks = [
       { name: "Guarana", capacity: "0.25l", price: "200 RSD" },
       { name: "Red Bull", capacity: "0.25l", price: "350 RSD" },
     ],
-    photo: energyDrink,
   },
   {
     id: 7,
@@ -150,7 +130,6 @@ const drinks = [
         price: "290 RSD",
       },
     ],
-    photo: beer,
   },
   {
     id: 8,
@@ -162,7 +141,6 @@ const drinks = [
       { name: "Jack Daniel's", capacity: "0.03l", price: "380 RSD" },
       { name: "Jameson", capacity: "0.03l", price: "310 RSD" },
     ],
-    photo: whisky,
   },
   {
     id: 9,
@@ -175,9 +153,8 @@ const drinks = [
       { name: "Vodka Absolut", capacity: "0.03l", price: "240 RSD" },
       { name: "Jegermeister", capacity: "0.03l", price: "260 RSD" },
       { name: "Gorski list", capacity: "0.03l", price: "200 RSD" },
-      { name: "Hennesy", capacity: "0.03l", price: "390 RSD" },
+      { name: "Hennesy", capacity: "0.03l", price: "400 RSD" },
     ],
-    photo: alcohol,
   },
   {
     id: 10,
@@ -185,12 +162,11 @@ const drinks = [
     icon: "LiaGlassWhiskeySolid ",
     items: [
       { name: `Viljamovka "Takovo"`, capacity: "0.03l", price: "210 RSD" },
-      { name: "Rakija od dunnje", capacity: "0.03l", price: "190 RSD" },
+      { name: "Rakija od dunje", capacity: "0.03l", price: "190 RSD" },
       { name: "Rakija od šljive", capacity: "0.03l", price: "190 RSD" },
       { name: "Medovača", capacity: "0.03l", price: "190 RSD" },
-      { name: "Liker od maline", capacity: "0.03l", price: "170 RSD" },
+      { name: "Liker od maline", capacity: "0.03l", price: "180 RSD" },
     ],
-    photo: rakija,
   },
   {
     id: 11,
@@ -205,21 +181,48 @@ const drinks = [
       { name: "Kupinovo vino", capacity: "0.187l", price: "300 RSD" },
       { name: "Somersbz (jabuka,mango)", capacity: "0.33l", price: "300 RSD" },
     ],
-    photo: wine,
   },
   {
     id: 12,
     category: "Kokteli",
     icon: "FaCocktail ",
     items: [
-      { name: "Blue frog / red frog", capacity: "0.3l", price: "410 RSD" },
-      { name: "Sex on the beach", capacity: "0.2l", price: "380 RSD" },
-      { name: "Sky light", capacity: "0.2l", price: "390 RSD" },
-      { name: "Long Island", capacity: "0.3l", price: "410 RSD" },
-      { name: "Mai tai", capacity: "0.3l", price: "380 RSD" },
-      { name: "Aleksandar", price: "380 RSD" },
+      {
+        name: "Blue frog / red frog",
+        ingredients: ["blue_curacao", "vodka", "sprite", "limeta"],
+        capacity: "0.3l",
+        price: "450 RSD",
+      },
+      {
+        name: "Sex on the beach",
+        ingredients: ["vodka", "breskva_snaps", "brusnica", "pomorandza"],
+        capacity: "0.2l",
+        price: "420 RSD",
+      },
+      {
+        name: "Sky light",
+        ingredients: ["vodka", "blue_curacao", "sprite", "limeta"],
+        capacity: "0.2l",
+        price: "430 RSD",
+      },
+      {
+        name: "Long Island",
+        ingredients: ["vodka", "dzin", "rum", "tekila", "triple_sec", "limun", "kola"],
+        capacity: "0.3l",
+        price: "450 RSD",
+      },
+      {
+        name: "Mai tai",
+        ingredients: ["rum", "triple_sec", "limun", "pomorandza"],
+        capacity: "0.3l",
+        price: "420 RSD",
+      },
+      {
+        name: "Aleksandar",
+        ingredients: ["konjak", "kakao_liker", "pavlaka"],
+        price: "420 RSD",
+      },
     ],
-    photo: cocktail,
   },
 ];
 

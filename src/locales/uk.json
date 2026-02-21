@@ -4,7 +4,7 @@
   "instagram": "Instagram",
   "drinks": "Drinks",
   "bakery": "Bakery",
-  "language": "Chose language:",
+  "language": "Choose language:",
   "Kafe i topli napici": "Coffee and Hot Drinks",
   "Vode": "Water",
   "Sveže ceđeno": "Freshly Squeezed",
@@ -43,7 +43,7 @@
   "Knjaz Miloš limun": "Knjaz Miloš lemon",
 
   "Limunada": "Lemonade",
-  "Limunada with flavor": "Lemonade with flavor",
+  "Limunada sa ukusom": "Lemonade with flavor",
   "Ice Tea homemade": "Homemade Ice Tea",
   "Ceđena pomorandža": "Freshly squeezed orange",
   "Ceđeni grejp": "Freshly squeezed grapefruit",
@@ -60,6 +60,24 @@
     "breskva": "peach",
     "marakuja": "passion fruit",
     "malina": "raspberry"
+  },
+  "ingredients": {
+    "blue_curacao": "Blue Curacao",
+    "vodka": "vodka",
+    "sprite": "sprite",
+    "limeta": "lime",
+    "breskva_snaps": "peach schnapps",
+    "brusnica": "cranberry",
+    "pomorandza": "orange",
+    "dzin": "gin",
+    "rum": "rum",
+    "tekila": "tequila",
+    "triple_sec": "triple sec",
+    "limun": "lemon",
+    "kola": "cola",
+    "konjak": "cognac",
+    "kakao_liker": "cocoa liqueur",
+    "pavlaka": "cream"
   },
 
   "Pomorandža GUSTO": "Orange GUSTO",
@@ -108,7 +126,7 @@
   "Vodka Puškin": "Vodka Pushkin",
 
   "Viljamovka \"Takovo\"": "Williams pear brandy \"Takovo\"",
-  "Rakija od dunnje": "Quince brandy",
+  "Rakija od dunje": "Quince brandy",
   "Rakija od šljive": "Plum brandy",
   "Medovača": "Honey brandy",
   "Liker od maline": "Raspberry liqueur",
@@ -133,5 +151,5 @@
   "Mafin (beli)": "Muffin (white)",
   "Krofna (čokolada)": "Donut (chocolate)",
   "Krofna (kapri)": "Donut (Capri)",
-  "Kikirki (100g)": "Peanuts (100g)"
+  "Kikiriki (100g)": "Peanuts (100g)"
 }

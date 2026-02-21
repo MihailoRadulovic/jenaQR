@@ -62,6 +62,24 @@
     "marakuja": "marakuja",
     "malina": "malina"
   },
+  "ingredients": {
+    "blue_curacao": "Blue Curacao",
+    "vodka": "vodka",
+    "sprite": "sprite",
+    "limeta": "limeta",
+    "breskva_snaps": "breskva šnaps",
+    "brusnica": "brusnica",
+    "pomorandza": "pomorandža",
+    "dzin": "džin",
+    "rum": "rum",
+    "tekila": "tekila",
+    "triple_sec": "triple sec",
+    "limun": "limun",
+    "kola": "kola",
+    "konjak": "konjak",
+    "kakao_liker": "kakao liker",
+    "pavlaka": "pavlaka"
+  },
 
   "Pomorandža GUSTO": "Pomorandža GUSTO",
   "Jabuka GUSTO": "Jabuka GUSTO",
@@ -109,7 +127,7 @@
   "Vodka Puškin": "Vodka Puškin",
 
   "Viljamovka \"Takovo\"": "Viljamovka \"Takovo\"",
-  "Rakija od dunnje": "Rakija od dunnje",
+  "Rakija od dunje": "Rakija od dunje",
   "Rakija od šljive": "Rakija od šljive",
   "Medovača": "Medovača",
   "Liker od maline": "Liker od maline",
@@ -134,5 +152,5 @@
   "Mafin (beli)": "Mafin (beli)",
   "Krofna (čokolada)": "Krofna (čokolada)",
   "Krofna (kapri)": "Krofna (kapri)",
-  "Kikirki (100g)": "Kikirki (100g)"
+  "Kikiriki (100g)": "Kikiriki (100g)"
 }

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Background from "./components/Background";
 import Menu from "./components/Menu";
-import jenaLogo from "./jenaLogo.jpg";
+import jenaLogo from "./images/jenaLogo.jpg";
 
 function App() {
   useEffect(() => {

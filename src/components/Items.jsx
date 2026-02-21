@@ -1,21 +1,14 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import BotOfItem from "./BotOfItem";
 import TopOfItem from "./TopOfItem";
-import { CSSTransition } from "react-transition-group";
 import "./animation.css";
-import drinks from "../data/drinks";
 
-function Items({ typeOfDrink, photo, icon, isOpen, onToggle, setHeaderRef }) {
-  const [loadedData, setLoadedData] = useState(null);
-  const nodeRef = useRef(null);
+function Items({ typeOfDrink, icon, isOpen, onToggle, setHeaderRef }) {
+  const [hasOpened, setHasOpened] = useState(false);
 
   const handleOpen = () => {
+    if (!hasOpened) setHasOpened(true);
     onToggle();
-
-    if (!loadedData) {
-      const drinkData = drinks.find((item) => item.category === typeOfDrink);
-      setLoadedData(drinkData);
-    }
   };
 
   return (
@@ -23,23 +16,18 @@ function Items({ typeOfDrink, photo, icon, isOpen, onToggle, setHeaderRef }) {
       <div ref={setHeaderRef} onClick={handleOpen} className="cursor-pointer">
         <TopOfItem
           typeOfDrink={typeOfDrink}
-          photo={photo}
           icon={icon}
           isOpen={isOpen}
         />
       </div>
 
-      <CSSTransition
-        in={isOpen}
-        timeout={500}
-        classNames="menu-primary"
-        unmountOnExit
-        nodeRef={nodeRef}
-      >
-        <div ref={nodeRef}>
-          <BotOfItem typeOfDrink={typeOfDrink} loadedData={loadedData} />
+      <div className={`accordion-grid ${isOpen ? "open" : ""}`}>
+        <div className="accordion-inner">
+          {hasOpened && (
+            <BotOfItem typeOfDrink={typeOfDrink} loadedData={true} />
+          )}
         </div>
-      </CSSTransition>
+      </div>
     </div>
   );
 }

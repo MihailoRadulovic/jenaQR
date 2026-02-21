@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { FaInstagram, FaWifi } from "react-icons/fa6";
+import { FaCheck } from "react-icons/fa6";
 import jenaLogo from "../images/jenaLogo.jpg";
 import Button from "../ui/Button";
 import Language from "./Language";
@@ -8,10 +10,29 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
   const { t } = useTranslation();
   const wifiPassword = "jena2020";
   const instagram = "jena_caffe";
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyWifi = async () => {
+    try {
+      await navigator.clipboard.writeText(wifiPassword);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = wifiPassword;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-3.5 ">
+      <div className="flex items-center gap-3.5">
         <img
           src={jenaLogo}
           alt="Jena logo"
@@ -23,38 +44,24 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
       </div>
 
       <div className="text-gray-800 flex flex-col gap-1.5">
-        {/* <div className=" text-base flex gap-6">
-          <div className="flex gap-2 items-center">
-            <FaWifi className="text-xl" />
-            {t("wifi")}:
-          </div>
-          <span className="font-medium text-lg text-gray-800">
-            {" "}
-            {wifiPassword}
-          </span>
-        </div> */}
-        <div className="grid grid-cols-[auto_1fr] items-center gap-x-4">
+        <div
+          className="grid grid-cols-[auto_1fr] items-center gap-x-4 cursor-pointer active:opacity-70 transition-opacity"
+          onClick={handleCopyWifi}
+        >
           <div className="flex items-center gap-2 text-base">
             <FaWifi className="text-xl" />
             {t("wifi")}:
           </div>
-          <span className="font-medium text-lg text-gray-800">
+          <span className="font-medium text-lg text-gray-800 flex items-center gap-2">
             {wifiPassword}
+            {copied && (
+              <span className="text-sm text-[var(--asparagus-600)] flex items-center gap-1">
+                <FaCheck className="text-xs" />
+              </span>
+            )}
           </span>
         </div>
 
-        {/* <div className="text-lg flex gap-6">
-          <div className="flex gap-2 items-center text-base">
-            <FaInstagram className="text-xl" /> Instagram:
-          </div>
-          <a
-            className="text-gray-950 font-medium text-lg"
-            href={`https://www.instagram.com/${instagram}`}
-          >
-            {" "}
-            @{instagram}
-          </a>
-        </div> */}
         <div className="grid grid-cols-[auto_1fr] items-center gap-x-4">
           <div className="flex items-center gap-2 text-base">
             <FaInstagram className="text-xl" />
@@ -63,6 +70,8 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
           <a
             className="text-gray-950 font-medium text-lg"
             href={`https://www.instagram.com/${instagram}`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             @{instagram}
           </a>
@@ -70,7 +79,6 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
       </div>
 
       <div className="flex items-center justify-between mt-1">
-        {/* LEVO – dugmad */}
         <div className="flex gap-1">
           <Button
             active={activeCategory === "Piće"}
@@ -86,7 +94,6 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
           </Button>
         </div>
 
-        {/* DESNO – jezik */}
         <div className="flex items-center gap-2">
           <Language />
         </div>
