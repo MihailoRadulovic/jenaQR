@@ -5,30 +5,27 @@ import { useEffect, useRef, useState } from "react";
 import Items2 from "./Items2";
 
 function Menu() {
-  const ANIM_MS = 350;
-
   const [activeCategory, setActiveCategory] = useState("Piće");
   const [openCategory, setOpenCategory] = useState(null);
   const [pendingCategory, setPendingCategory] = useState(null);
 
   const scrollContainerRef = useRef(null);
   const headerRefs = useRef({}); // { [category]: HTMLElement }
-  const pendingScrollTarget = useRef(null);
 
-  const SCROLL_OFFSET = 24; // koliko da bude "još malo više" iznad headera
+  const SCROLL_OFFSET = 24;
 
-  const scrollToHeader = (cat, layoutShiftUp = 0) => {
+  const scrollToHeader = (cat) => {
     const container = scrollContainerRef.current;
     const el = headerRefs.current[cat];
-    if (!container || !el) return null;
+    if (!container || !el) return;
 
     const cRect = container.getBoundingClientRect();
     const eRect = el.getBoundingClientRect();
-    const delta = eRect.top - cRect.top;
-    const targetTop = Math.max(0, container.scrollTop + delta - SCROLL_OFFSET - layoutShiftUp);
 
-    container.scrollTo({ top: targetTop, behavior: "smooth" });
-    return targetTop;
+    const delta = eRect.top - cRect.top;
+    const targetTop = container.scrollTop + delta - SCROLL_OFFSET;
+
+    container.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
   };
 
   const handleToggle = (cat) => {
@@ -38,58 +35,34 @@ function Menu() {
       return;
     }
 
-    // ako ništa otvoreno -> otvori i skroluj
+    // nista nije otvoreno -> otvori
     if (!openCategory) {
       setOpenCategory(cat);
-      requestAnimationFrame(() => scrollToHeader(cat));
       return;
     }
 
-    // nešto je otvoreno -> izračunaj layout shift pa skroluj simultano sa zatvaranjem
-    const openEl = headerRefs.current[openCategory];
-    const targetEl = headerRefs.current[cat];
-    let layoutShift = 0;
-
-    if (openEl && targetEl) {
-      const openIsAbove =
-        openEl.getBoundingClientRect().top < targetEl.getBoundingClientRect().top;
-      if (openIsAbove) {
-        const inner = openEl.parentElement?.querySelector(
-          ".accordion-grid .accordion-inner"
-        );
-        layoutShift = inner ? inner.scrollHeight : 0;
-      }
-    }
-
+    // nesto je otvoreno -> prvo zatvori, pa otvori trazeni
     setPendingCategory(cat);
     setOpenCategory(null);
-
-    requestAnimationFrame(() => {
-      pendingScrollTarget.current = scrollToHeader(cat, layoutShift);
-    });
   };
 
-  useEffect(() => {
-    if (openCategory === null && pendingCategory) {
+  // kada se zatvori stara kategorija, otvori pending
+  const handleExited = () => {
+    if (pendingCategory) {
       const cat = pendingCategory;
-
-      const id = setTimeout(() => {
-        // Snap na tačnu poziciju pre otvaranja (u slučaju da smooth scroll još traje)
-        if (pendingScrollTarget.current !== null) {
-          const container = scrollContainerRef.current;
-          if (container) {
-            container.scrollTo({ top: pendingScrollTarget.current, behavior: "instant" });
-          }
-          pendingScrollTarget.current = null;
-        }
-
-        setOpenCategory(cat);
-        setPendingCategory(null);
-      }, ANIM_MS);
-
-      return () => clearTimeout(id);
+      setPendingCategory(null);
+      setOpenCategory(cat);
     }
-  }, [openCategory, pendingCategory]);
+  };
+
+  // skroluj do novootvorene kategorije
+  useEffect(() => {
+    if (openCategory) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => scrollToHeader(openCategory));
+      });
+    }
+  }, [openCategory]);
 
   return (
     <div
@@ -107,9 +80,12 @@ function Menu() {
           <Items
             key={drink.id}
             typeOfDrink={drink.category}
+            photo={drink.photo}
             icon={drink.icon}
             isOpen={openCategory === drink.category}
             onToggle={() => handleToggle(drink.category)}
+            onExited={handleExited}
+            onEntered={() => scrollToHeader(drink.category)}
             setHeaderRef={(el) => {
               if (el) headerRefs.current[drink.category] = el;
             }}
