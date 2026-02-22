@@ -33,9 +33,9 @@ function Language() {
           </button>
           <button
             title="English"
-            onClick={() => changeLanguage("uk")}
+            onClick={() => changeLanguage("en")}
             className={`w-11 h-11 rounded-full flex items-center justify-center ${
-              currentLang === "uk"
+              currentLang === "en"
                 ? "bg-[var(--asparagus-600)]"
                 : "bg-[var(--asparagus-900)]"
             }`}

@@ -38,3 +38,22 @@
     grid-template-rows 500ms ease,
     opacity 500ms ease;
 }
+
+/* Tab switching fade animation */
+.tab-fade-enter {
+  opacity: 0;
+}
+
+.tab-fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.tab-fade-exit {
+  opacity: 1;
+}
+
+.tab-fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}

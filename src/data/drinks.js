@@ -219,13 +219,13 @@ const drinks = [
         name: "Blue frog / red frog",
         capacity: "0.3l",
         price: "410 RSD",
-        variants: ["Blue curacao", "Vodka", "Sprite", "Limunov sok"],
+        ingredients: ["Blue curacao", "Vodka", "Sprite", "Limunov sok"],
       },
       {
         name: "Sex on the beach",
         capacity: "0.2l",
         price: "380 RSD",
-        variants: [
+        ingredients: [
           "Vodka",
           "Breskva liker",
           "Sok od pomorandže",
@@ -236,13 +236,13 @@ const drinks = [
         name: "Sky light",
         capacity: "0.2l",
         price: "390 RSD",
-        variants: ["Gin", "Blue curacao", "Limunov sok", "Tonic"],
+        ingredients: ["Gin", "Blue curacao", "Limunov sok", "Tonic"],
       },
       {
         name: "Long Island",
         capacity: "0.3l",
         price: "410 RSD",
-        variants: [
+        ingredients: [
           "Vodka",
           "Rum",
           "Gin",
@@ -256,7 +256,7 @@ const drinks = [
         name: "Mai tai",
         capacity: "0.3l",
         price: "380 RSD",
-        variants: [
+        ingredients: [
           "Rum",
           "Triple sec",
           "Sok od limete",
@@ -267,7 +267,7 @@ const drinks = [
       {
         name: "Aleksandar",
         price: "380 RSD",
-        variants: ["Konjak", "Krem de kakao", "Slatka pavlaka"],
+        ingredients: ["Konjak", "Krem de kakao", "Slatka pavlaka"],
       },
     ],
     photo: cocktail,

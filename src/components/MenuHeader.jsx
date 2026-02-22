@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { FaInstagram, FaWifi } from "react-icons/fa6";
-import { FaCheck } from "react-icons/fa6";
+import { FaCheck, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { IoCopyOutline } from "react-icons/io5";
+import { BiSolidCoffeeBean } from "react-icons/bi";
+import { LuCroissant } from "react-icons/lu";
 import jenaLogo from "../images/jenaLogo.jpg";
 import Button from "../ui/Button";
 import Language from "./Language";
@@ -45,35 +48,39 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
 
       <div className="text-gray-800 flex flex-col gap-1.5">
         <div
-          className="grid grid-cols-[auto_1fr] items-center gap-x-4 cursor-pointer active:opacity-70 transition-opacity"
+          className="grid grid-cols-[auto_1fr] items-center gap-x-4 cursor-pointer active:opacity-70 transition-opacity select-none"
           onClick={handleCopyWifi}
         >
-          <div className="flex items-center gap-2 text-base">
+          <div className="flex items-center gap-2 text-base font-light">
             <FaWifi className="text-xl" />
             {t("wifi")}:
           </div>
-          <span className="font-medium text-lg text-gray-800 flex items-center gap-2">
+          <span className="font-normal text-lg text-gray-800 flex items-center gap-2">
             {wifiPassword}
-            {copied && (
+            {copied ? (
               <span className="text-sm text-[var(--asparagus-600)] flex items-center gap-1">
                 <FaCheck className="text-xs" />
+                Kopirano!
               </span>
+            ) : (
+              <IoCopyOutline className="text-base text-gray-400" />
             )}
           </span>
         </div>
 
         <div className="grid grid-cols-[auto_1fr] items-center gap-x-4">
-          <div className="flex items-center gap-2 text-base">
+          <div className="flex items-center gap-2 text-base font font-light">
             <FaInstagram className="text-xl" />
             Instagram:
           </div>
           <a
-            className="text-gray-950 font-medium text-lg"
+            className="text-gray-950 font-normal text-lg underline underline-offset-2 decoration-gray-400 hover:decoration-[var(--asparagus-700)] hover:text-[var(--asparagus-700)] active:text-[var(--asparagus-800)] transition-colors duration-200 flex items-center gap-1.5"
             href={`https://www.instagram.com/${instagram}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             @{instagram}
+            <FaArrowUpRightFromSquare className="text-xs text-gray-400" />
           </a>
         </div>
       </div>
@@ -84,12 +91,14 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
             active={activeCategory === "Piće"}
             setActive={() => setActiveCategory("Piće")}
           >
+            <BiSolidCoffeeBean className="text-base" />
             {t("drinks")}
           </Button>
           <Button
             active={activeCategory === "Pekara"}
             setActive={() => setActiveCategory("Pekara")}
           >
+            <LuCroissant className="text-base" />
             {t("bakery")}
           </Button>
         </div>

@@ -3,7 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 // Učitaj lokalne fajlove sa prevodima
 import translationSR from "./locales/sr.json";
-import translationEN from "./locales/uk.json";
+import translationEN from "./locales/en.json";
 
 i18n
   .use(initReactI18next) // inicijalizacija za React
@@ -12,7 +12,7 @@ i18n
       sr: {
         translation: translationSR, // Prevod za srpski
       },
-      uk: {
+      en: {
         translation: translationEN, // Prevod za engleski
       },
     },

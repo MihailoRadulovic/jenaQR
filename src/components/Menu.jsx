@@ -1,16 +1,21 @@
 import Items from "./Items";
 import MenuHeader from "./MenuHeader";
 import drinks from "../data/drinks";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Items2 from "./Items2";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { FaArrowUp } from "react-icons/fa6";
+import "./animation.css";
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState("Piće");
   const [openCategory, setOpenCategory] = useState(null);
   const [pendingCategory, setPendingCategory] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const scrollContainerRef = useRef(null);
   const headerRefs = useRef({}); // { [category]: HTMLElement }
+  const tabContentRef = useRef(null);
 
   const SCROLL_OFFSET = 24;
 
@@ -64,6 +69,33 @@ function Menu() {
     }
   }, [openCategory]);
 
+  // scroll-to-top visibility
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      setShowScrollTop(container.scrollTop > 200);
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // scroll reset pri promeni taba
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [activeCategory]);
+
+  const scrollToTop = useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    container.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div
       ref={scrollContainerRef}
@@ -75,24 +107,50 @@ function Menu() {
         setActiveCategory={setActiveCategory}
       />
 
-      {activeCategory === "Piće" &&
-        drinks.map((drink) => (
-          <Items
-            key={drink.id}
-            typeOfDrink={drink.category}
-            photo={drink.photo}
-            icon={drink.icon}
-            isOpen={openCategory === drink.category}
-            onToggle={() => handleToggle(drink.category)}
-            onExited={handleExited}
-            onEntered={() => scrollToHeader(drink.category)}
-            setHeaderRef={(el) => {
-              if (el) headerRefs.current[drink.category] = el;
-            }}
-          />
-        ))}
+      <SwitchTransition mode="out-in">
+        <CSSTransition
+          key={activeCategory}
+          classNames="tab-fade"
+          timeout={250}
+          nodeRef={tabContentRef}
+        >
+          <div ref={tabContentRef}>
+            {activeCategory === "Piće" &&
+              drinks.map((drink) => (
+                <Items
+                  key={drink.id}
+                  typeOfDrink={drink.category}
+                  photo={drink.photo}
+                  icon={drink.icon}
+                  isOpen={openCategory === drink.category}
+                  onToggle={() => handleToggle(drink.category)}
+                  onExited={handleExited}
+                  onEntered={() => scrollToHeader(drink.category)}
+                  setHeaderRef={(el) => {
+                    if (el) headerRefs.current[drink.category] = el;
+                  }}
+                />
+              ))}
 
-      {activeCategory === "Pekara" && <Items2 />}
+            {activeCategory === "Pekara" && <Items2 />}
+          </div>
+        </CSSTransition>
+      </SwitchTransition>
+
+      {/* Scroll to top button */}
+      <div className="h-0 overflow-visible sticky bottom-4 z-20 flex justify-end pr-2">
+        <button
+          onClick={scrollToTop}
+          className={`w-10 h-10 -translate-y-14 rounded-full bg-[var(--asparagus-600)] text-[var(--asparagus-100)] shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-[var(--asparagus-700)] active:scale-95 ${
+            showScrollTop
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-75 pointer-events-none"
+          }`}
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp className="text-sm" />
+        </button>
+      </div>
     </div>
   );
 }
