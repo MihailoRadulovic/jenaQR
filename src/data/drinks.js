@@ -99,7 +99,7 @@ const drinks = [
       { name: "Cedevita limun", capacity: "0.3l", price: "180 RSD" },
       { name: "Cedevita limun / zova", capacity: "0.3l", price: "180 RSD" },
       { name: "Cedevita limeta", capacity: "0.3l", price: "180 RSD" },
-      { name: "Fuze tea", capacity: "0.33l", price: "190 RSD" },
+      { name: "Fuze tea", capacity: "0.33l", price: "200 RSD" },
     ],
     photo: stillDrink,
   },
