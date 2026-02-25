@@ -217,13 +217,13 @@ const drinks = [
       {
         name: "Blue frog / red frog",
         capacity: "0.3l",
-        price: "410 RSD",
+        price: "440 RSD",
         ingredients: ["Blue curacao", "Vodka", "Sprite", "Limunov sok"],
       },
       {
         name: "Sex on the beach",
         capacity: "0.3l",
-        price: "400 RSD",
+        price: "440 RSD",
         ingredients: [
           "Vodka",
           "Breskva liker",
@@ -234,13 +234,13 @@ const drinks = [
       {
         name: "Sky light",
         capacity: "0.3l",
-        price: "400 RSD",
+        price: "440 RSD",
         ingredients: ["Gin", "Blue curacao", "Limunov sok", "Tonic"],
       },
       {
         name: "Long Island",
         capacity: "0.3l",
-        price: "410 RSD",
+        price: "440 RSD",
         ingredients: [
           "Vodka",
           "Rum",
@@ -254,7 +254,7 @@ const drinks = [
       {
         name: "Mai tai",
         capacity: "0.3l",
-        price: "400 RSD",
+        price: "440 RSD",
         ingredients: [
           "Rum",
           "Triple sec",
@@ -266,7 +266,7 @@ const drinks = [
       {
         name: "Aleksandar",
         capacity: "0.3l",
-        price: "400 RSD",
+        price: "440 RSD",
         ingredients: ["Konjak", "Krem de kakao", "Slatka pavlaka"],
       },
     ],
