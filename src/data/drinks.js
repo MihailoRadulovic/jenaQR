@@ -28,7 +28,7 @@ const drinks = [
       { name: "Domaća kafa sa mlekom", price: "150 RSD" },
       {
         name: "Espresso sa sojinim mlekom",
-        price: "210 RSD",
+        price: "230 RSD",
       },
       { name: "Nes sa sojinim mlekom", price: "230 RSD" },
       { name: "Topla čokolada", price: "220 RSD" },
