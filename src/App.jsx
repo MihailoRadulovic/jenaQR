@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Background from "./components/Background";
 import Menu from "./components/Menu";
 import SplashScreen from "./components/SplashScreen";
@@ -6,6 +6,7 @@ import jenaLogo from "./images/jenaLogo.jpg";
 
 function App() {
   const [splashDone, setSplashDone] = useState(false);
+  const handleSplashDone = useCallback(() => setSplashDone(true), []);
 
   useEffect(() => {
     const link = document.querySelector("link[rel~='icon']");
@@ -18,7 +19,7 @@ function App() {
     <div>
       <Background />
       <Menu />
-      {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
+      {!splashDone && <SplashScreen onDone={handleSplashDone} />}
     </div>
   );
 }
