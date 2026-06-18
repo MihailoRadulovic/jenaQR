@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { FaChevronDown } from "react-icons/fa6";
 import drinksIcons from "../data/drinksIcons";
 
-function TopOfItem({ typeOfDrink, icon, isOpen }) {
+function TopOfItem({ typeOfDrink, isOpen }) {
   const { t } = useTranslation();
 
   const drink = drinksIcons.find((drink) => drink.category === typeOfDrink);

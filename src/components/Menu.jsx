@@ -3,6 +3,7 @@ import MenuHeader from "./MenuHeader";
 import drinks from "../data/drinks";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Items2 from "./Items2";
+import IceCreamItems from "./IceCreamItems";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { FaArrowUp } from "react-icons/fa6";
 import "./animation.css";
@@ -120,8 +121,6 @@ function Menu() {
                 <Items
                   key={drink.id}
                   typeOfDrink={drink.category}
-                  photo={drink.photo}
-                  icon={drink.icon}
                   isOpen={openCategory === drink.category}
                   onToggle={() => handleToggle(drink.category)}
                   onExited={handleExited}
@@ -133,6 +132,7 @@ function Menu() {
               ))}
 
             {activeCategory === "Pekara" && <Items2 />}
+            {activeCategory === "Sladoled" && <IceCreamItems />}
           </div>
         </CSSTransition>
       </SwitchTransition>

@@ -4,6 +4,7 @@ import { FaCheck, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { IoCopyOutline } from "react-icons/io5";
 import { BiSolidCoffeeBean } from "react-icons/bi";
 import { LuCroissant } from "react-icons/lu";
+import { GiIceCreamCone } from "react-icons/gi";
 import jenaLogo from "../images/jenaLogo.jpg";
 import Button from "../ui/Button";
 import Language from "./Language";
@@ -52,7 +53,7 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
           onClick={handleCopyWifi}
         >
           <div className="flex items-center gap-2 text-base font-light">
-            <FaWifi className="text-xl" />
+            <FaWifi className="text-3xl" />
             {t("wifi")}:
           </div>
           <span className="font-normal text-lg text-gray-800 flex items-center gap-2">
@@ -69,8 +70,8 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
         </div>
 
         <div className="grid grid-cols-[auto_1fr] items-center gap-x-4">
-          <div className="flex items-center gap-2 text-base font font-light">
-            <FaInstagram className="text-xl" />
+          <div className="flex items-center gap-2 text-base font-light">
+            <FaInstagram className="text-3xl" />
             Instagram:
           </div>
           <a
@@ -83,28 +84,37 @@ function MenuHeader({ activeCategory, setActiveCategory }) {
             <FaArrowUpRightFromSquare className="text-xs text-gray-400" />
           </a>
         </div>
-      </div>
-
-      <div className="flex items-center justify-between mt-1">
-        <div className="flex gap-1">
-          <Button
-            active={activeCategory === "Piće"}
-            setActive={() => setActiveCategory("Piće")}
-          >
-            <BiSolidCoffeeBean className="text-base" />
-            {t("drinks")}
-          </Button>
-          <Button
-            active={activeCategory === "Pekara"}
-            setActive={() => setActiveCategory("Pekara")}
-          >
-            <LuCroissant className="text-base" />
-            {t("bakery")}
-          </Button>
-        </div>
 
         <div className="flex items-center gap-2">
           <Language />
+        </div>
+      </div>
+
+      <div className="flex items-center mt-1 gap-1">
+        <Button
+          active={activeCategory === "Piće"}
+          setActive={() => setActiveCategory("Piće")}
+        >
+          <BiSolidCoffeeBean className="text-3xl" />
+        </Button>
+        <Button
+          active={activeCategory === "Pekara"}
+          setActive={() => setActiveCategory("Pekara")}
+        >
+          <LuCroissant className="text-3xl" />
+        </Button>
+        <div className="relative">
+          <Button
+            active={activeCategory === "Sladoled"}
+            setActive={() => setActiveCategory("Sladoled")}
+          >
+            <GiIceCreamCone className="text-3xl" />
+          </Button>
+          {activeCategory !== "Sladoled" && (
+            <span className="absolute -top-2 -right-1 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none shadow">
+              NOVO
+            </span>
+          )}
         </div>
       </div>
     </div>

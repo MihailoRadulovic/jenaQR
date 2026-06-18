@@ -1,15 +1,11 @@
-import { useRef } from "react";
-import drinks from "../data/drinks";
-import "./animation.css";
 import { useTranslation } from "react-i18next";
 
-function BotOfItem({ typeOfDrink, loadedData }) {
-  const nodeRef = useRef(null);
+function BotOfItem({ loadedData }) {
   const { t } = useTranslation();
 
   if (!loadedData) return null;
 
-  const drinkType = drinks.find((drink) => drink.category === typeOfDrink);
+  const drinkType = loadedData;
   if (!drinkType) return null;
 
   const renderList = (items) => (
@@ -74,8 +70,8 @@ function BotOfItem({ typeOfDrink, loadedData }) {
   );
 
   return (
-    <div className="bg-[var(--asparagus-600)] rounded-b-3xl w-[100%] mx-auto h-auto  p-3 font-['Montserrat']">
-      <div ref={nodeRef}>
+    <div className="bg-[var(--asparagus-600)] rounded-b-3xl w-full mx-auto h-auto p-3 font-['Montserrat']">
+      <div>
         {renderList(drinkType.items)}
 
         {drinkType.category === "Piva" && drinkType.items2?.length > 0 && (

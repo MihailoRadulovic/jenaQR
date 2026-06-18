@@ -17,7 +17,7 @@ function Language() {
           <button
             title="Srpski"
             onClick={() => changeLanguage("sr")}
-            className={`w-11 h-11 rounded-full flex items-center justify-center ${
+            className={`w-9 h-9 rounded-full flex items-center justify-center ${
               currentLang === "sr"
                 ? "bg-[var(--asparagus-600)]"
                 : "bg-[var(--asparagus-900)]"
@@ -26,15 +26,15 @@ function Language() {
             <img
               src="https://flagcdn.com/24x18/rs.png"
               srcSet="https://flagcdn.com/48x36/rs.png 2x"
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               alt="Srpska zastava"
             />
           </button>
           <button
             title="English"
             onClick={() => changeLanguage("en")}
-            className={`w-11 h-11 rounded-full flex items-center justify-center ${
+            className={`w-9 h-9 rounded-full flex items-center justify-center ${
               currentLang === "en"
                 ? "bg-[var(--asparagus-600)]"
                 : "bg-[var(--asparagus-900)]"
@@ -44,8 +44,8 @@ function Language() {
               src="https://flagcdn.com/16x12/gb.png"
               srcSet="https://flagcdn.com/32x24/gb.png 2x,
     https://flagcdn.com/48x36/gb.png 3x"
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               alt="United Kingdom"
             />
           </button>

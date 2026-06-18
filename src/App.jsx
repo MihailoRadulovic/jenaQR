@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Background from "./components/Background";
 import Menu from "./components/Menu";
+import SplashScreen from "./components/SplashScreen";
 import jenaLogo from "./images/jenaLogo.jpg";
 
 function App() {
+  const [splashDone, setSplashDone] = useState(false);
+
   useEffect(() => {
     const link = document.querySelector("link[rel~='icon']");
     if (link) {
-      link.href = jenaLogo; // Promeni putanju ako koristiš drugi fajl
+      link.href = jenaLogo;
     }
   }, []);
 
@@ -15,6 +18,7 @@ function App() {
     <div>
       <Background />
       <Menu />
+      {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
     </div>
   );
 }

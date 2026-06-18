@@ -4,6 +4,7 @@
   "instagram": "Instagram",
   "drinks": "Piće",
   "bakery": "Pekara",
+  "icecream": "Sladoled",
   "language": "Izaberi jezik:",
 
   "Kafe i topli napici": "Kafe i topli napici",
@@ -30,6 +31,7 @@
   "Domaća kafa": "Domaća kafa",
   "Domaća kafa sa mlekom": "Domaća kafa sa mlekom",
   "Espresso sa sojinim mlekom": "Espresso sa sojinim mlekom",
+  "Cappuccino sa sojinim mlekom": "Cappuccino sa sojinim mlekom",
   "Nes sa sojinim mlekom": "Nes sa sojinim mlekom",
   "Topla čokolada": "Topla čokolada",
   "Čaj Dolcezza": "Čaj Dolcezza",
@@ -165,10 +167,13 @@
   "Mai tai": "Mai tai",
   "Aleksandar": "Aleksandar",
 
+  "Belgijska čokolada": "Belgijska čokolada",
+  "Sicilijski pistać": "Sicilijski pistać",
+  "Vanila": "Vanila",
+  "Malina": "Malina",
+  "icecream_size_s": "S",
+  "icecream_size_m": "M",
+
   "Bavarska pereca": "Bavarska pereca",
-  "Mafin (crni)": "Mafin (crni)",
-  "Mafin (beli)": "Mafin (beli)",
-  "Krofna (čokolada)": "Krofna (čokolada)",
-  "Krofna (kapri)": "Krofna (kapri)",
   "Kikiriki (100g)": "Kikiriki (100g)"
 }

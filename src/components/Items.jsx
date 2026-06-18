@@ -7,8 +7,6 @@ import drinks from "../data/drinks";
 
 function Items({
   typeOfDrink,
-  photo,
-  icon,
   isOpen,
   onToggle,
   setHeaderRef,
@@ -32,8 +30,6 @@ function Items({
       <div ref={setHeaderRef} onClick={handleOpen} className="cursor-pointer">
         <TopOfItem
           typeOfDrink={typeOfDrink}
-          photo={photo}
-          icon={icon}
           isOpen={isOpen}
         />
       </div>

@@ -191,7 +191,7 @@ const drinks = [
     icon: "LiaGlassWhiskeySolid ",
     items: [
       { name: `Viljamovka "Takovo"`, capacity: "0.03l", price: "220 RSD" },
-      { name: "Rakija od dunnje", capacity: "0.03l", price: "200 RSD" },
+      { name: "Rakija od dunje", capacity: "0.03l", price: "200 RSD" },
       { name: "Rakija od šljive", capacity: "0.03l", price: "200 RSD" },
       { name: "Medovača", capacity: "0.03l", price: "200 RSD" },
       { name: "Liker od maline", capacity: "0.03l", price: "190 RSD" },
