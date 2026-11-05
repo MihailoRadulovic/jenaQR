@@ -209,6 +209,7 @@ const drinks = [
       { name: "Vranac pro corde", capacity: "0.187l", price: "400 RSD" },
       { name: "Kupinovo vino", capacity: "0.187l", price: "310 RSD" },
       { name: "Somersby (jabuka,mango)", capacity: "0.33l", price: "310 RSD" },
+      { name: "Kuvano vino", capacity: "0.3l", price: "380 RSD" },
     ],
     photo: wine,
   },
