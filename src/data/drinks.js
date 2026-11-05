@@ -142,7 +142,7 @@ const drinks = [
       { name: "Heineken", capacity: "0.25l", price: "310 RSD" },
       { name: "Birra Moretti", capacity: "0.33l", price: "240 RSD" },
       { name: "Laško", capacity: "0.33l", price: "250 RSD" },
-      { name: "Zaječarsko", capacity: "0.33l", price: "190 RSD" },
+      { name: "Zaječarsko", capacity: "0.33l", price: "200 RSD" },
     ],
     items2: [
       {
